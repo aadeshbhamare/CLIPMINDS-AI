@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KineAI Studio Pro - Advanced AI Video Editor</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Oswald:wght@700&family=Playfair+Display:wght@900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --accent: #ef4444; /* Pro Red */
+            --accent-glow: rgba(239, 68, 68, 0.3);
+            --bg-base: #0a0908;
+            /* DARK BUT VISIBLE Yellowish + Red (Not Hectic) */
+            --bg-image: radial-gradient(circle at 10% 10%, rgba(45, 26, 1, 0.25) 0%, transparent 45%), 
+                        radial-gradient(circle at 90% 90%, rgba(45, 10, 10, 0.25) 0%, transparent 45%),
+                        linear-gradient(135deg, #0f0f0f 0%, #050505 100%);
+            --text-main: #f8fafc;
+        }
+
+        /* Weekend Theme: Deep Relaxed Indigo */
+        [data-theme="weekend"] {
+            --accent: #8b5cf6;
+            --accent-glow: rgba(139, 92, 246, 0.4);
+            --bg-base: #0f172a;
+            --bg-image: linear-gradient(135deg, #1e1b4b 0%, #0f172a 100%);
+        }
+
+        /* Monday Theme: Minimalist Slate/Silver */
+        [data-theme="monday"] {
+            --accent: #94a3b8;
+            --accent-glow: rgba(148, 163, 184, 0.4);
+            --bg-base: #020617;
+            --bg-image: radial-gradient(circle at top, #1e293b 0%, #020617 100%);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-base);
+            background-image: var(--bg-image);
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: var(--text-main);
+            overflow: hidden;
+            -webkit-font-smoothing: antialiased;
+            transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* High-End Scrollbars */
+        ::-webkit-scrollbar { width: 3px; height: 3px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { 
+            background: rgba(255, 255, 255, 0.05); 
+            border-radius: 10px; 
+            transition: background 0.3s;
+        }
+        ::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+
+        /* Glassmorphism Panels */
+        .glass-panel {
+            background: rgba(15, 15, 15, 0.65);
+            backdrop-filter: blur(40px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            box-shadow: 0 8px 64px 0 rgba(0, 0, 0, 0.5);
+        }
+
+        .active-ring {
+            box-shadow: 0 0 0 2px var(--accent), 0 0 40px var(--accent-glow);
+        }
+
+        .timeline-grid {
+            background-image: linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+            background-size: 160px 100%;
+        }
+
+        input[type="range"] {
+            -webkit-appearance: none;
+            background: rgba(255,255,255,0.08);
+            height: 4px;
+            border-radius: 2px;
+        }
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 14px;
+            height: 14px;
+            background: var(--accent);
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 0 10px var(--accent-glow);
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom": "https://esm.sh/react-dom@^19.2.3",
+    "react-dom/client": "https://esm.sh/react-dom@^19.2.3/client",
+    "lucide-react": "https://esm.sh/lucide-react@^0.462.0",
+    "@google/genai": "https://esm.sh/@google/genai@^1.35.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/"
+  }
+}
+</script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="module" src="./index.tsx"></script>
+</body>
+</html>

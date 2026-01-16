@@ -1,0 +1,22 @@
+[data-theme="default"] {
+  background: #ffffff;
+  color: #000;
+}
+
+[data-theme="weekend"] {
+  background: #e3f2fd;
+}
+
+[data-theme="monday"] {
+  background: #f5f7ff;
+}
+
+[data-theme="makarSankranti"] {
+  background: linear-gradient(45deg, orange, gold);
+  color: #4a2c00;
+}
+
+[data-theme="christmas"] {
+  background: #0b3d2e;
+  color: white;
+}

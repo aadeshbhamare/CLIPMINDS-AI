@@ -1,0 +1,8 @@
+{
+  "name": "ClipMind AI",
+  "description": "Professional AI-powered video editor with automated sequencing, beat-syncing, and cinematic generation.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
